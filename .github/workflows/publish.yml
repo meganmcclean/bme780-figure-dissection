@@ -1,4 +1,4 @@
-name: Render and Publish to GitHub Pages
+name: Render notebooks and publish
 
 on:
   push:
@@ -6,34 +6,86 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install Python dependencies
+      - name: Install dependencies
         run: pip install numpy matplotlib scikit-learn scipy jupyter nbconvert
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+      - name: Convert notebooks to HTML
+        run: |
+          mkdir -p docs
+          jupyter nbconvert --to html format_a_explainer.ipynb --output docs/format_a_explainer.html --execute
+          jupyter nbconvert --to html format_b_labnotebook.ipynb --output docs/format_b_labnotebook.html --execute
+          cp index.qmd docs/index.md   # keep a copy of the source
 
-      - name: Render Quarto site
-        run: quarto render
+      - name: Create index page
+        run: |
+          cat > docs/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>BME780: Figure Dissection Examples</title>
+            <style>
+              body { font-family: Georgia, serif; max-width: 700px; margin: 60px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+              h1 { font-size: 1.6em; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
+              h2 { font-size: 1.1em; margin-top: 2em; }
+              a { color: #1a4e8a; }
+              .card { border: 1px solid #ddd; border-radius: 6px; padding: 16px 20px; margin: 16px 0; }
+              .badge { display:inline-block; margin-top:8px; }
+            </style>
+          </head>
+          <body>
+            <h1>BME780: Figure Dissection — Example Submissions</h1>
+            <p>Examples based on Figure 4 (PCA of yeast sporulation gene expression,
+            Raychadhuri 2009 / Chu et al. 1998). Two formats are equally acceptable.</p>
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+            <div class="card">
+              <h2><a href="format_a_explainer.html">Format A — The Explainer</a></h2>
+              <p>Polished, topic-organized. The worklog appears as a table at the end.
+              Good for students who prefer to structure their work before showing it.</p>
+            </div>
+
+            <div class="card">
+              <h2><a href="format_b_labnotebook.html">Format B — The Lab Notebook</a></h2>
+              <p>Raw, chronological, dated entries. Includes a documented wrong attempt.
+              Good for students who prefer to think by doing.</p>
+            </div>
+
+            <h2>Resources</h2>
+            <ul>
+              <li><a href="https://github.com/meganmcclean/bme780-figure-dissection/blob/main/assignment_prompt.md">Assignment Prompt</a></li>
+              <li><a href="https://github.com/meganmcclean/bme780-figure-dissection/blob/main/rubric.md">Grading Rubric</a></li>
+              <li><a href="https://github.com/meganmcclean/bme780-figure-dissection/blob/main/data/README.md">Getting the Chu et al. Data</a></li>
+            </ul>
+          </body>
+          </html>
+          EOF
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          publish_branch: gh-pages
+          path: docs/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
