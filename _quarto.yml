@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: docs          # GitHub Pages serves from /docs by default
+
+website:
+  title: "BME780: Figure Dissection Examples"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: format_a_explainer.ipynb
+        text: "Format A — Explainer"
+      - href: format_b_labnotebook.ipynb
+        text: "Format B — Lab Notebook"
+      - href: rubric.md
+        text: Rubric
+      - href: assignment_prompt.md
+        text: Assignment Prompt
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    code-tools: true          # adds a "copy code" button
+    highlight-style: github
+
+execute:
+  freeze: true                # don't re-run notebooks on every render
+                              # students see pre-run outputs

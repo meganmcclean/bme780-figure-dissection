@@ -1,0 +1,39 @@
+---
+title: "BME780: Figure Dissection — Example Submissions"
+---
+
+This site hosts example submissions for the **BME780 Figure Dissection** assignment. The examples are based on Figure 4 from Raychadhuri (2009), which applies PCA to the Chu et al. (1998) yeast sporulation gene expression dataset.
+
+Two formats are provided — both are acceptable submissions. Choose whichever fits how you work:
+
+---
+
+## [Format A — The Explainer](format_a_explainer.ipynb)
+
+A polished, structured document organized around the method: what the figure claims, the math, the code, the interpretation, and a reflection. Readable as a standalone tutorial. The worklog appears as a table at the end.
+
+**Good fit for:** students who think by writing, prefer to organize work before showing it, or who have already submitted something in this style.
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GITHUB_USERNAME/REPO_NAME/blob/main/format_a_explainer.ipynb)
+
+---
+
+## [Format B — The Lab Notebook](format_b_labnotebook.ipynb)
+
+A raw, chronological log of the learning process — dated entries, dead ends, things figured out mid-stream, honest notes on what's still confusing. The worklog *is* the document.
+
+**Good fit for:** students who prefer to think by doing, or who have been keeping a running log as they work.
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GITHUB_USERNAME/REPO_NAME/blob/main/format_b_labnotebook.ipynb)
+
+---
+
+## Assignment Resources
+
+- [Assignment Prompt](assignment_prompt.md)
+- [Rubric](rubric.md)
+- [Data Instructions](data/README.md)
+
+---
+
+*Questions? Email the instructor or post to the course forum.*
