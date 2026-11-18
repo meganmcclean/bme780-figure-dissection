@@ -1,7 +1,21 @@
 # BME780 Figure Dissection — Final Assignment Prompt
 
-**Due:** [DATE]  
-**Submission:** Upload a zipped folder to Canvas. The folder should include your notebook/document, any sketches (photos are fine), and your data file if applicable.
+---
+## Notes:
+
+Also see the Canvas assignment pages:
+- [Draft of Figure Dissection](https://canvas.wisc.edu/courses/529524/assignments/3105643)
+- [Final Figure Dissection](https://canvas.wisc.edu/courses/529524/assignments/3105647)
+ 
+---
+**Due:** Draft 12/02/2026  Final 12/09/2026
+**Submission:** Submit your assignment as a PDF or as a link to a rendered webpage (e.g., GitHub Pages, Google Colab, or an nbviewer link). Your submission must be viewable in a standard web browser or Adobe Acrobat. I will not be able to download or install software to run everyone's code. Acceptable formats include:
+- A PDF exported from any tool (Jupyter, R Markdown, Quarto, Word, Google Docs, Overleaf, etc.)
+- A GitHub Pages link (like the example notebooks on the course site)
+- A Google Colab link (set sharing to “Anyone with the link can view”)
+- A static HTML file attached to Canvas
+
+If your figure dissection includes code, it must be visible in our submission (either as code cells ina rendered notebook or as an appendix to a PDF). DO submit the raw files (e.g. .ipynb, .Rmd, .py, .R) but your grade cannot be reliant on me being able to run this code. 
 
 ---
 
