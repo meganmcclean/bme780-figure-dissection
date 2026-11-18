@@ -50,27 +50,27 @@ jobs:
           <body>
             <h1>BME780: Figure Dissection Assignment Examples</h1>
             <p>Examples based on Figure 4 (PCA of yeast sporulation gene expression) from <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2669932/">Raychaudhuri, et al 2009.</a></p>
-            <p>Data from  <a href="https://pubmed.ncbi.nlm.nih.gov/9784122/" Chu et al. 1998</a> </p>
+            <p>Data from  <a href="https://pubmed.ncbi.nlm.nih.gov/9784122/"> Chu et al 1998.</a> </p>
             <p> Two formats for this assignment are equally acceptable. The first is more focused on delivering a polished "explainer". The second is 
             focused on documenting the process of understanding the figure</p>
 
             <div class="card">
-              <h2><a href="format_a_explainer.html">Format A — The Explainer</a></h2>
-              <p>Polished, topic-organized. The worklog appears as a table at the end.
-              Good for students who prefer to structure their work before showing it.</p>
+              <h2><a href="format_a_explainer.html">Format A: The Explainer</a></h2>
+              <p> This should be more in the form of a polished report and follow the first half of the rubric. The emphasis here is on a clear, explanatory document more than on 
+              the process of understanding the figure. You may include a worklog at the end of the document as evidence for your process, but it is not required. This version is good if you prefer structured, polished work before showing it. </p>
+             
             </div>
 
             <div class="card">
-              <h2><a href="format_b_labnotebook.html">Format B — The Lab Notebook</a></h2>
-              <p>Raw, chronological, dated entries. Includes a documented wrong attempt.
-              Good for students who prefer to think by doing.</p>
+              <h2><a href="format_b_labnotebook.html">Format B: Process-driven (more like a lab notebook)</a></h2>
+              <p> This assignment should include raw, chronological, dated entries. The emphasis here is on documenting the process of understanding the figure, rather than on completeness or correctness.
+              This version is good if you think by doing, and emphasizes making a genuine effort to understand the figure (and underlying methodology) rather than producing a polished document. </p>
             </div>
 
             <h2>Resources</h2>
             <ul>
               <li><a href="https://github.com/meganmcclean/bme780-figure-dissection/blob/main/assignment_prompt.md">Assignment Prompt</a></li>
               <li><a href="https://github.com/meganmcclean/bme780-figure-dissection/blob/main/rubric.md">Grading Rubric</a></li>
-              <li><a href="https://github.com/meganmcclean/bme780-figure-dissection/blob/main/data/README.md">Getting the Chu et al. Data</a></li>
             </ul>
           </body>
           </html>
