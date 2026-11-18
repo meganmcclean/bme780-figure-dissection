@@ -13,7 +13,6 @@ Also see the Canvas assignment pages:
 - A PDF exported from any tool (Jupyter, R Markdown, Quarto, Word, Google Docs, Overleaf, etc.)
 - A GitHub Pages link (like the example notebooks on the course site)
 - A Google Colab link (set sharing to “Anyone with the link can view”)
-- A static HTML file attached to Canvas
 
 If your figure dissection includes code, it must be visible in our submission (either as code cells ina rendered notebook or as an appendix to a PDF). DO submit the raw files (e.g. .ipynb, .Rmd, .py, .R) but your grade cannot be reliant on me being able to run this code. 
 
